@@ -1,0 +1,405 @@
+func	printInt	8
+addiu	$t0	$sp	0
+sw	$a0	0($t0)
+addiu	$t1	$sp	0
+lw	$t2	0($t1)
+move	$a0	$t2
+li	$v0	1
+syscall	
+label	$l0
+end	printInt	8
+func	printSpace	8
+li	$a0	32
+li	$v0	11
+syscall	
+label	$l1
+end	printSpace	8
+func	printNewline	8
+li	$a0	10
+li	$v0	11
+syscall	
+label	$l2
+end	printNewline	8
+func	main	128
+addiu	$t3	$sp	12
+li	$t4	0
+sw	$t4	0($t3)
+addiu	$t5	$sp	12
+lw	$t6	0($t5)
+free	$t6
+label	$l5
+addiu	$t7	$sp	12
+lw	$t8	0($t7)
+li	$t9	3
+blt	$t8	$t9	$l7
+li	$s7	0
+j	$l8
+label	$l7
+li	$s7	1
+label	$l8
+bne	$s7	$0	$l4
+j	$l6
+label	$l4
+addiu	$t10	$sp	8
+li	$t11	0
+sw	$t11	0($t10)
+addiu	$t12	$sp	8
+lw	$t13	0($t12)
+free	$t13
+label	$l10
+addiu	$t14	$sp	8
+lw	$t15	0($t14)
+li	$t16	3
+blt	$t15	$t16	$l12
+li	$s7	0
+j	$l13
+label	$l12
+li	$s7	1
+label	$l13
+bne	$s7	$0	$l9
+j	$l11
+label	$l9
+addiu	$t17	$sp	12
+lw	$t18	0($t17)
+mul	$t19	$t18	3
+addiu	$t20	$sp	8
+lw	$t21	0($t20)
+add	$t22	$t21	$t19
+mul	$t23	$t22	4
+addu	$t24	$t23	88
+addiu	$t25	$sp	12
+addiu	$t26	$sp	8
+lw	$t27	0($t25)
+lw	$t28	0($t26)
+add	$t29	$t27	$t28
+move	$s6	$t24
+move	$t30	$s6
+move	$t31	$s6
+addu	$t32	$sp	$t30
+sw	$t29	0($t32)
+addu	$t33	$sp	$t31
+lw	$t34	0($t33)
+addiu	$t35	$sp	12
+lw	$t36	0($t35)
+mul	$t37	$t36	3
+addiu	$t38	$sp	8
+lw	$t39	0($t38)
+add	$t40	$t39	$t37
+mul	$t41	$t40	4
+addu	$t42	$t41	88
+addu	$t43	$sp	$t42
+lw	$t44	0($t43)
+move	$a0	$t44
+jal	printInt
+free	$t34
+free	$v0
+jal	printSpace
+free	$v0
+addiu	$t45	$sp	8
+lw	$t46	0($t45)
+li	$t47	1
+add	$t48	$t46	$t47
+addiu	$t49	$sp	8
+sw	$t48	0($t49)
+addiu	$t50	$sp	8
+lw	$t51	0($t50)
+free	$t51
+j	$l10
+label	$l11
+jal	printNewline
+free	$v0
+addiu	$t52	$sp	12
+lw	$t53	0($t52)
+li	$t54	1
+add	$t55	$t53	$t54
+addiu	$t56	$sp	12
+sw	$t55	0($t56)
+addiu	$t57	$sp	12
+lw	$t58	0($t57)
+free	$t58
+j	$l5
+label	$l6
+jal	printNewline
+free	$v0
+addiu	$t59	$sp	12
+li	$t60	0
+sw	$t60	0($t59)
+addiu	$t61	$sp	12
+lw	$t62	0($t61)
+free	$t62
+label	$l15
+addiu	$t63	$sp	12
+lw	$t64	0($t63)
+li	$t65	3
+blt	$t64	$t65	$l17
+li	$s7	0
+j	$l18
+label	$l17
+li	$s7	1
+label	$l18
+bne	$s7	$0	$l14
+j	$l16
+label	$l14
+addiu	$t66	$sp	8
+li	$t67	0
+sw	$t67	0($t66)
+addiu	$t68	$sp	8
+lw	$t69	0($t68)
+free	$t69
+label	$l20
+addiu	$t70	$sp	8
+lw	$t71	0($t70)
+li	$t72	3
+blt	$t71	$t72	$l22
+li	$s7	0
+j	$l23
+label	$l22
+li	$s7	1
+label	$l23
+bne	$s7	$0	$l19
+j	$l21
+label	$l19
+addiu	$t73	$sp	12
+lw	$t74	0($t73)
+mul	$t75	$t74	3
+addiu	$t76	$sp	8
+lw	$t77	0($t76)
+add	$t78	$t77	$t75
+mul	$t79	$t78	4
+addu	$t80	$t79	52
+addiu	$t81	$sp	12
+lw	$t82	0($t81)
+mul	$t83	$t82	3
+addiu	$t84	$sp	8
+lw	$t85	0($t84)
+add	$t86	$t85	$t83
+mul	$t87	$t86	4
+addu	$t88	$t87	88
+move	$s6	$t80
+move	$t89	$s6
+move	$t90	$s6
+addu	$t91	$sp	$t88
+addu	$t92	$sp	$t89
+lw	$t93	0($t91)
+sw	$t93	0($t92)
+addu	$t94	$sp	$t90
+lw	$t95	0($t94)
+addiu	$t96	$sp	12
+lw	$t97	0($t96)
+mul	$t98	$t97	3
+addiu	$t99	$sp	8
+lw	$t100	0($t99)
+add	$t101	$t100	$t98
+mul	$t102	$t101	4
+addu	$t103	$t102	52
+addu	$t104	$sp	$t103
+lw	$t105	0($t104)
+move	$a0	$t105
+jal	printInt
+free	$t95
+free	$v0
+jal	printSpace
+free	$v0
+addiu	$t106	$sp	8
+lw	$t107	0($t106)
+li	$t108	1
+add	$t109	$t107	$t108
+addiu	$t110	$sp	8
+sw	$t109	0($t110)
+addiu	$t111	$sp	8
+lw	$t112	0($t111)
+free	$t112
+j	$l20
+label	$l21
+jal	printNewline
+free	$v0
+addiu	$t113	$sp	12
+lw	$t114	0($t113)
+li	$t115	1
+add	$t116	$t114	$t115
+addiu	$t117	$sp	12
+sw	$t116	0($t117)
+addiu	$t118	$sp	12
+lw	$t119	0($t118)
+free	$t119
+j	$l15
+label	$l16
+jal	printNewline
+free	$v0
+addiu	$t120	$sp	12
+li	$t121	0
+sw	$t121	0($t120)
+addiu	$t122	$sp	12
+lw	$t123	0($t122)
+free	$t123
+label	$l25
+addiu	$t124	$sp	12
+lw	$t125	0($t124)
+li	$t126	3
+blt	$t125	$t126	$l27
+li	$s7	0
+j	$l28
+label	$l27
+li	$s7	1
+label	$l28
+bne	$s7	$0	$l24
+j	$l26
+label	$l24
+addiu	$t127	$sp	8
+li	$t128	0
+sw	$t128	0($t127)
+addiu	$t129	$sp	8
+lw	$t130	0($t129)
+free	$t130
+label	$l30
+addiu	$t131	$sp	8
+lw	$t132	0($t131)
+li	$t133	3
+blt	$t132	$t133	$l32
+li	$s7	0
+j	$l33
+label	$l32
+li	$s7	1
+label	$l33
+bne	$s7	$0	$l29
+j	$l31
+label	$l29
+addiu	$t134	$sp	12
+lw	$t135	0($t134)
+mul	$t136	$t135	3
+addiu	$t137	$sp	8
+lw	$t138	0($t137)
+add	$t139	$t138	$t136
+mul	$t140	$t139	4
+addu	$t141	$t140	16
+move	$s6	$t141
+move	$t142	$s6
+move	$t143	$s6
+addu	$t144	$sp	$t142
+li	$t145	0
+sw	$t145	0($t144)
+addu	$t146	$sp	$t143
+lw	$t147	0($t146)
+addiu	$t148	$sp	4
+li	$t149	0
+sw	$t149	0($t148)
+addiu	$t150	$sp	4
+lw	$t151	0($t150)
+free	$t151
+label	$l35
+addiu	$t152	$sp	4
+lw	$t153	0($t152)
+li	$t154	3
+blt	$t153	$t154	$l37
+li	$s7	0
+j	$l38
+label	$l37
+li	$s7	1
+label	$l38
+bne	$s7	$0	$l34
+j	$l36
+label	$l34
+addiu	$t155	$sp	12
+lw	$t156	0($t155)
+mul	$t157	$t156	3
+addiu	$t158	$sp	8
+lw	$t159	0($t158)
+add	$t160	$t159	$t157
+mul	$t161	$t160	4
+addu	$t162	$t161	16
+addiu	$t163	$sp	12
+lw	$t164	0($t163)
+mul	$t165	$t164	3
+addiu	$t166	$sp	8
+lw	$t167	0($t166)
+add	$t168	$t167	$t165
+mul	$t169	$t168	4
+addu	$t170	$t169	16
+addiu	$t171	$sp	12
+lw	$t172	0($t171)
+mul	$t173	$t172	3
+addiu	$t174	$sp	4
+lw	$t175	0($t174)
+add	$t176	$t175	$t173
+mul	$t177	$t176	4
+addu	$t178	$t177	88
+addiu	$t179	$sp	4
+lw	$t180	0($t179)
+mul	$t181	$t180	3
+addiu	$t182	$sp	8
+lw	$t183	0($t182)
+add	$t184	$t183	$t181
+mul	$t185	$t184	4
+addu	$t186	$t185	52
+addu	$t187	$sp	$t178
+addu	$t188	$sp	$t186
+lw	$t189	0($t187)
+lw	$t190	0($t188)
+mul	$t191	$t189	$t190
+addu	$t192	$sp	$t170
+lw	$t193	0($t192)
+add	$t194	$t193	$t191
+move	$s6	$t162
+move	$t195	$s6
+move	$t196	$s6
+addu	$t197	$sp	$t195
+sw	$t194	0($t197)
+addu	$t198	$sp	$t196
+lw	$t199	0($t198)
+free	$t199
+addiu	$t200	$sp	4
+lw	$t201	0($t200)
+li	$t202	1
+add	$t203	$t201	$t202
+addiu	$t204	$sp	4
+sw	$t203	0($t204)
+addiu	$t205	$sp	4
+lw	$t206	0($t205)
+free	$t206
+j	$l35
+label	$l36
+free	$t147
+addiu	$t207	$sp	12
+lw	$t208	0($t207)
+mul	$t209	$t208	3
+addiu	$t210	$sp	8
+lw	$t211	0($t210)
+add	$t212	$t211	$t209
+mul	$t213	$t212	4
+addu	$t214	$t213	16
+addu	$t215	$sp	$t214
+lw	$t216	0($t215)
+move	$a0	$t216
+jal	printInt
+free	$v0
+jal	printSpace
+free	$v0
+addiu	$t217	$sp	8
+lw	$t218	0($t217)
+li	$t219	1
+add	$t220	$t218	$t219
+addiu	$t221	$sp	8
+sw	$t220	0($t221)
+addiu	$t222	$sp	8
+lw	$t223	0($t222)
+free	$t223
+j	$l30
+label	$l31
+jal	printNewline
+free	$v0
+addiu	$t224	$sp	12
+lw	$t225	0($t224)
+li	$t226	1
+add	$t227	$t225	$t226
+addiu	$t228	$sp	12
+sw	$t227	0($t228)
+addiu	$t229	$sp	12
+lw	$t230	0($t229)
+free	$t230
+j	$l25
+label	$l26
+li	$t231	0
+ret	$t231
+j	$l3
+label	$l3
+end	main	128

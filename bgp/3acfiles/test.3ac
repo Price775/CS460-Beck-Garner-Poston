@@ -1,0 +1,90 @@
+func	printInt	8
+addiu	$t0	$sp	0
+sw	$a0	0($t0)
+addiu	$t1	$sp	0
+lw	$t2	0($t1)
+move	$a0	$t2
+li	$v0	1
+syscall	
+label	$l0
+end	printInt	8
+func	printSpace	8
+li	$a0	32
+li	$v0	11
+syscall	
+label	$l1
+end	printSpace	8
+func	printNewline	8
+li	$a0	10
+li	$v0	11
+syscall	
+label	$l2
+end	printNewline	8
+func	add	16
+addiu	$t3	$sp	8
+sw	$a0	0($t3)
+addiu	$t4	$sp	4
+sw	$a1	0($t4)
+addiu	$t5	$sp	8
+addiu	$t6	$sp	4
+lw	$t7	0($t5)
+lw	$t8	0($t6)
+add	$t9	$t7	$t8
+ret	$t9
+j	$l3
+label	$l3
+end	add	16
+func	sub	16
+addiu	$t10	$sp	8
+sw	$a0	0($t10)
+addiu	$t11	$sp	4
+sw	$a1	0($t11)
+addiu	$t12	$sp	8
+addiu	$t13	$sp	4
+lw	$t14	0($t12)
+lw	$t15	0($t13)
+sub	$t16	$t14	$t15
+ret	$t16
+j	$l4
+label	$l4
+end	sub	16
+func	main	16
+addiu	$t17	$sp	8
+li	$t18	2
+sw	$t18	0($t17)
+addiu	$t19	$sp	8
+lw	$t20	0($t19)
+addiu	$t21	$sp	4
+li	$t22	1
+sw	$t22	0($t21)
+addiu	$t23	$sp	4
+lw	$t24	0($t23)
+free	$t20
+free	$t24
+addiu	$t25	$sp	8
+lw	$t26	0($t25)
+move	$a0	$t26
+addiu	$t27	$sp	4
+lw	$t28	0($t27)
+move	$a1	$t28
+jal	add
+move	$a0	$v0
+jal	printInt
+jal	printNewline
+free	$v0
+free	$v0
+addiu	$t29	$sp	8
+lw	$t30	0($t29)
+move	$a0	$t30
+addiu	$t31	$sp	4
+lw	$t32	0($t31)
+move	$a1	$t32
+jal	sub
+move	$a0	$v0
+jal	printInt
+free	$v0
+li	$t33	0
+ret	$t33
+j	$l5
+label	$l5
+end	main	16
